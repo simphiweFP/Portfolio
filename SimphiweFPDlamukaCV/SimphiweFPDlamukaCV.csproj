@@ -186,6 +186,7 @@
     <Content Include="img\seo-optimization.jpg" />
     <Content Include="img\social-media.jpg" />
     <Content Include="img\timeline-img.jpg" />
+    <Content Include="img\TTDlogo-color.png" />
     <Content Include="img\web-design.jpg" />
     <Content Include="img\web-development.jpg" />
     <Content Include="js\bootstrap-progressbar.min.js" />

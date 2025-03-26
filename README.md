@@ -5,10 +5,12 @@ Welcome to my **Profile Code Repository**! This repository contains the source c
 ## 🛠️ Technologies Used  
 - HTML & CSS for styling (if applicable)  
 - JavaScript for dynamic elements
-- 
+
 ## 📂 Repository Structure  
 ├── 🎨 Img/ # Images, banners, icons
+
 ├── ⚙️ scripts/ # JavaScript
+
 ├── ⚙️ ccs/ # style 
 
 ## 📖 How to Use  

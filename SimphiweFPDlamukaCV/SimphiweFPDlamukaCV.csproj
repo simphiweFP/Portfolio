@@ -184,6 +184,7 @@
     <Content Include="img\safari-pinned-tab.svg" />
     <Content Include="img\SD LOGO.png" />
     <Content Include="img\seo-optimization.jpg" />
+    <Content Include="img\SimLog.png" />
     <Content Include="img\social-media.jpg" />
     <Content Include="img\timeline-img.jpg" />
     <Content Include="img\TTDlogo-color.png" />
@@ -217,6 +218,8 @@
     <Content Include="NewFolder1\glyphicons-halflings-regular.ttf" />
     <Content Include="NewFolder1\glyphicons-halflings-regular.woff" />
     <Content Include="NewFolder1\glyphicons-halflings-regular.woff2" />
+    <None Include="Properties\PublishProfiles\simphiwedlamuka-001-site1 - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\simphiwedlamuka-001-site1 - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />

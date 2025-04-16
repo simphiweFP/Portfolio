@@ -110,24 +110,24 @@ html, body {
 }
 
 .big-rectangle {
-  position: absolute;
-  right: auto;
-  top: 50%;
-  left: 50%;
-  margin: 0 auto;
-  width: 230px;
-  height: 230px;
-  background-color: #000;
-  border: 0;
-  transform: translate(-50%, -50%) rotate(45deg);
-  -webkit-transform: translate(-50%, -50%) rotate(45deg);
-  -moz-transform: translate(-50%, -50%) rotate(45deg);
-  -o-transform: translate(-50%, -50%) rotate(45deg);
-  -ms-transform: translate(-50%, -50%) rotate(45deg);
-  -webkit-box-shadow: 10px 10px 0px 0px #dddddd;
-  -o-box-shadow: 10px 10px 0px 0px #dddddd;
-  -moz-box-shadow: 10px 10px 0px 0px #dddddd;
-  box-shadow: 10px 10px 0px 0px #dddddd;
+    position: absolute;
+    right: auto;
+    top: 50%;
+    left: 50%;
+    margin: 0 auto;
+    width: 230px;
+    height: 230px;
+    background-color: #333;
+    border: 0;
+    transform: translate(-50%, -50%) rotate(45deg);
+    -webkit-transform: translate(-50%, -50%) rotate(45deg);
+    -moz-transform: translate(-50%, -50%) rotate(45deg);
+    -o-transform: translate(-50%, -50%) rotate(45deg);
+    -ms-transform: translate(-50%, -50%) rotate(45deg);
+    -webkit-box-shadow: 10px 10px 0px 0px #dddddd;
+    -o-box-shadow: 10px 10px 0px 0px #dddddd;
+    -moz-box-shadow: 10px 10px 0px 0px #dddddd;
+    box-shadow: 10px 10px 0px 0px #dddddd;
 }
 
 .medium-rectangle {
@@ -290,7 +290,7 @@ html, body {
   height: 100%;
   top: 0;
   right: 0;
-  background-color: #000;
+  background-color: #333;
 }
 
 .site-logo a {

@@ -117,7 +117,7 @@ html, body {
   margin: 0 auto;
   width: 230px;
   height: 230px;
-  background-color: #19c2c1;
+  background-color: #000;
   border: 0;
   transform: translate(-50%, -50%) rotate(45deg);
   -webkit-transform: translate(-50%, -50%) rotate(45deg);
@@ -290,7 +290,7 @@ html, body {
   height: 100%;
   top: 0;
   right: 0;
-  background-color: #004b91;
+  background-color: #000;
 }
 
 .site-logo a {

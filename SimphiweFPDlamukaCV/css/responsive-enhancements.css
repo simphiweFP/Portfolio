@@ -1,0 +1,211 @@
+/* Responsive Design Enhancements */
+
+/* Mobile-First Approach */
+@media (max-width: 576px) {
+  .hero-content h1 {
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+  
+  .hero-job {
+    font-size: 1rem;
+  }
+  
+  .hero-actions {
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+  
+  .hero-actions .btn {
+    width: 100%;
+    margin: 0 !important;
+  }
+  
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+  
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+  
+  .service-card {
+    padding: var(--space-md);
+  }
+  
+  .site-section {
+    padding: var(--space-xl) 0;
+  }
+  
+  .navbar-nav {
+    background: var(--dark-surface);
+    border-radius: 8px;
+    margin-top: var(--space-sm);
+    padding: var(--space-sm);
+  }
+  
+  .navbar-nav > li > a {
+    padding: var(--space-sm) var(--space-md) !important;
+    border-radius: 6px;
+    margin-bottom: var(--space-xs);
+  }
+  
+  .navbar-nav > li > a:hover {
+    background: var(--primary-color) !important;
+  }
+}
+
+/* Tablet Styles */
+@media (min-width: 577px) and (max-width: 768px) {
+  .portfolio-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+}
+
+/* Desktop Styles */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .portfolio-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .skills-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Large Desktop */
+@media (min-width: 1025px) {
+  .portfolio-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  .container {
+    max-width: 1200px;
+  }
+}
+
+/* Ultra-wide Screens */
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1400px;
+  }
+  
+  .hero-content {
+    max-width: 900px;
+  }
+}
+
+/* High DPI Displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .portfolio-item-thumb img {
+    image-rendering: -webkit-optimize-contrast;
+  }
+}
+
+/* Dark Mode Preferences */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text-primary: #f8fafc;
+    --text-secondary: #cbd5e1;
+  }
+}
+
+/* Light Mode Preferences */
+@media (prefers-color-scheme: light) {
+  .light-theme {
+    --dark-bg: #ffffff;
+    --dark-surface: #f8fafc;
+    --dark-card: #ffffff;
+    --text-primary: #1e293b;
+    --text-secondary: #475569;
+    --text-muted: #64748b;
+  }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .hero::before,
+  .typing-animation,
+  .skill-progress-bar::after {
+    animation: none;
+  }
+  
+  .parallax-element {
+    transform: none !important;
+  }
+}
+
+/* Print Styles */
+@media print {
+  * {
+    background: white !important;
+    color: black !important;
+    box-shadow: none !important;
+  }
+  
+  .hero,
+  .site-header,
+  .fab,
+  .portfolio-overlay {
+    display: none !important;
+  }
+  
+  .portfolio-item {
+    break-inside: avoid;
+    margin-bottom: 1rem;
+  }
+  
+  .site-section {
+    padding: 1rem 0;
+  }
+}
+
+/* Accessibility Enhancements */
+@media (prefers-contrast: high) {
+  :root {
+    --primary-color: #0066cc;
+    --secondary-color: #00aa44;
+    --text-primary: #000000;
+    --text-secondary: #333333;
+  }
+}
+
+/* Focus Visible Support */
+.btn:focus-visible,
+.form-control:focus-visible,
+.navbar-nav > li > a:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+/* Hover Support Detection */
+@media (hover: hover) {
+  .portfolio-item:hover .portfolio-overlay {
+    opacity: 1;
+  }
+  
+  .service-card:hover {
+    transform: translateY(-8px);
+  }
+}
+
+@media (hover: none) {
+  .portfolio-overlay {
+    opacity: 1;
+    background: rgba(37, 99, 235, 0.7);
+  }
+  
+  .service-card {
+    transform: none;
+  }
+}

@@ -426,12 +426,13 @@ html, body {
 ================================================== */
 .hero {
 
-    background: url(../img/img-20220216-wa0008.jpg) center no-repeat;
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.9), rgba(30, 41, 59, 0.9)), url(../img/img-20220216-wa0008.jpg) center no-repeat;
     height: 100%;
     width: 100%;
     display: table;
     position: relative;
     background-size: cover;
+    background-attachment: fixed;
 }
 
 .background-overlay:before {
@@ -455,11 +456,15 @@ html, body {
 .hero-content h1 {
   width: 100%;
   padding: 0 15px;
-  font-size: 40px;
+  font-size: clamp(2.5rem, 5vw, 4rem);
   font-weight: 700;
   text-align: center;
   margin: 0 auto;
   text-transform: uppercase;
+  background: linear-gradient(135deg, #2563eb, #3b82f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .hero-content p {
@@ -470,12 +475,23 @@ html, body {
 }
 
 .hero-content .hero-job {
-  font-size: 18px;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  font-family: 'JetBrains Mono', monospace;
+  color: #10b981;
 }
 
 .hero-content .hero-job span {
   padding-bottom: 5px;
-  border-bottom: 1px solid #ffffff;
+  border: 1px solid #10b981;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  background: rgba(16, 185, 129, 0.1);
+  position: relative;
+}
+
+.hero-content .hero-job span::before {
+  content: '> ';
+  color: #f59e0b;
 }
 
 .hero-content .hero-job-desc {
@@ -999,12 +1015,13 @@ html, body {
 /* Section: Services */
 .section-services.site-section {
   padding: 0;
-  background-color: #f6f6f6;
+  background: linear-gradient(135deg, #1e293b, #334155);
 }
 
 .section-services .container-fluid {
-  padding: 100px 15px 70px;
-  background-color: #ffffff;
+  padding: 100px 15px 70px;  
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  color: #f8fafc;
 }
 
 .section-services .container-fluid + .container {
@@ -1028,8 +1045,14 @@ html, body {
 
 .section-services .nav-tabs .col-sm-fifth {
   height: 160px;
-  background: #ffffff;
-  border-bottom: 3px solid #19c2c1;
+  background: #334155;
+  border-bottom: 3px solid #2563eb;
+  transition: all 0.3s ease;
+}
+
+.section-services .nav-tabs .col-sm-fifth:hover {
+  background: #475569;
+  transform: translateY(-4px);
 }
 
 .section-services .carousel-inner {
@@ -1051,8 +1074,8 @@ html, body {
 .section-services .item-controls .carousel-control {
   margin: 7px 5px 0;
   position: relative;
-  border: 1px solid #dddddd;
-  background: #ffffff;
+  border: 1px solid #475569;
+  background: #334155;
   width: 30px;
   height: 30px;
   transform: rotate(45deg);
@@ -1061,13 +1084,14 @@ html, body {
   -o-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   opacity: 1;
+  transition: all 0.3s ease;
 }
 
 .section-services .item-controls .carousel-control i {
   position: absolute;
   top: 50%;
   left: 50%;
-  color: #000;
+  color: #f8fafc;
   font-size: 18px;
   transform: translate(-50%, -50%) rotate(-45deg);
   -webkit-transform: translate(-50%, -50%) rotate(-45deg);
@@ -1078,8 +1102,9 @@ html, body {
 }
 
 .section-services .item-controls .carousel-control:hover, .section-services .item-controls .carousel-control:focus {
-  background-color: #19c2c1;
-  border-color: #19c2c1;
+  background-color: #2563eb;
+  border-color: #2563eb;
+  transform: rotate(45deg) scale(1.1);
 }
 
 .section-services .item-controls .carousel-control:hover i, .section-services .item-controls .carousel-control:focus i {
@@ -1098,7 +1123,8 @@ html, body {
   position: relative;
   display: table-cell;
   vertical-align: middle;
-  color: #000;
+  color: #f8fafc;
+  transition: all 0.3s ease;
 }
 
 .service .rectangle {
@@ -1147,7 +1173,9 @@ html, body {
 
 .carousel-indicators .active .col-sm-fifth,
 .carousel-indicators a:hover .col-sm-fifth {
-  background-color: #19c2c1;
+  background-color: #2563eb;
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3);
 }
 
 .carousel-indicators .active .service p,
@@ -1158,10 +1186,11 @@ html, body {
 
 .carousel-indicators .active .service .rectangle,
 .carousel-indicators a:hover .service .rectangle {
-  background-color: #ffffff;
+  background-color: #f8fafc;
   height: 80px;
   width: 80px;
   margin-bottom: 0;
+  animation: pulse 2s infinite;
 }
 
 .carousel-indicators .active .service .rectangle i,
@@ -1170,7 +1199,7 @@ html, body {
 }
 
 .carousel-indicators .active .service .rectangle {
-  color: #19c2c1;
+  color: #2563eb;
 }
 
 .carousel-indicators .active .service:after {
@@ -1184,7 +1213,7 @@ html, body {
   height: 0;
   border-style: solid;
   border-width: 15px 15px 0 15px;
-  border-color: #19c2c1 transparent transparent transparent;
+  border-color: #2563eb transparent transparent transparent;
   z-index: 99;
 }
 

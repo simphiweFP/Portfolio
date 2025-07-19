@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
 
@@ -41,6 +41,9 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="~/css/style.css">
+    
+    <!-- Modern Portfolio Enhancements -->
+    <link rel="stylesheet" href="~/css/modern-portfolio.css">
 
 </head>
 <body>
@@ -50,9 +53,15 @@
 
         <!-- Name & Description -->
         <div class="hero-content">
-            <h1>I am Simphiwe Fisokuhle Protters Dlamuka</h1>
-            <p class="hero-job"><span>I'M A JUNIOR SOFTWARE DEVELOPER</span></p>
-            <!-- <p class="hero-job-desc">I STAND ON A SWEET SPOT WHERE DESIGN &amp; CODE INTERSECTS. </p> -->
+            <h1 class="fade-in-up">I am Simphiwe Fisokuhle Protters Dlamuka</h1>
+            <p class="hero-job fade-in-up"><span class="typing-animation">I'M A <span class="typing-text">FULL-STACK DEVELOPER</span></span></p>
+            <!-- <p class="hero-job-desc">I STAND ON A SWEET SPOT WHERE DESIGN & CODE INTERSECTS. </p> -->
+            
+            <!-- Enhanced CTA Buttons -->
+            <div class="hero-actions fade-in-up" style="margin-top: 2rem;">
+                <a href="#works" class="btn btn-primary">View My Work</a>
+                <a href="#contact" class="btn btn-outline" style="margin-left: 1rem;">Get In Touch</a>
+            </div>
 
         </div>
 
@@ -101,20 +110,20 @@
 
     <!-- Main content -->
     <main id="main" class="site-main">
-        <section class="site-section section-hello" id="intro">
+        <section class="site-section section-hello fade-in-up" id="intro">
             <div class="container">
-                <h2>WELCOME&amp;EXPLORE MY WORLD </h2>
-                <p class="section-subtitle"><span>I possess the following abilities and qualities</span></p>
+                <h2 class="fade-in-up">WELCOME & EXPLORE MY WORLD</h2>
+                <p class="section-subtitle fade-in-up"><span>I possess the following abilities and qualities</span></p>
                 <div class="row">
-                    <div class="col-sm-4">
-                        <div class="main-service text-right">
+                    <div class="col-sm-4 fade-in-left">
+                        <div class="main-service service-card text-right">
                             <div class="rectangle">
                                 <i class="fa fa-calendar" aria-hidden="true"></i>
                             </div>
                             <h3>Critical thinking and problem solving</h3>
                             <p>Your deadline is the most important value for us. Our job is to make sure the job is done perfectly before the deadline.</p>
                         </div>
-                        <div class="main-service text-right">
+                        <div class="main-service service-card text-right">
                             <div class="rectangle">
                                 <i class="fa fa-comments" aria-hidden="true"></i>
                             </div>
@@ -122,20 +131,20 @@
                             <p>Our team is available to check on your questions and take in feedback as soon as possibly.</p>
                         </div>
                     </div>
-                    <div class="col-sm-4">
+                    <div class="col-sm-4 fade-in-up">
                         <div class="big-rectangle">
                             <img src="~/img/SIMDEVLOGO.png" alt="">
                         </div>
                     </div>
                     <div class="col-sm-4">
-                        <div class="main-service text-left">
+                        <div class="main-service service-card text-left fade-in-right">
                             <div class="rectangle">
                                 <i class="fa fa-check" aria-hidden="true"></i>
                             </div>
                             <h3>Teamwork and collaboration</h3>
                             <p>We test out everything to make sure that your project is fully functional, cross–browser compatible and meets your specifications.</p>
                         </div>
-                        <div class="main-service text-left">
+                        <div class="main-service service-card text-left fade-in-right">
                             <div class="rectangle">
                                 <i class="fa fa-list" aria-hidden="true"></i>
                             </div>
@@ -155,11 +164,11 @@
         </section>
 
         <!-- About section -->
-        <section class="site-section section-about text-center" id="about">
+        <section class="site-section section-about text-center fade-in-up" id="about">
             <div class="container">
-                <h2 class="section-subtitle"> <span>PROFILE</span></h2>
+                <h2 class="section-subtitle fade-in-up"> <span>PROFILE</span></h2>
                 <br />
-                <p>
+                <p class="fade-in-up">
                     I am a capable and energetic young person, self-motivated, and I carry the desire
                     to learn new things and bring forth favorable qualities to perform the job with
                     competency and efficiency. I am an ambitious, goal-driven person who is intelligent
@@ -176,6 +185,37 @@
                     and Microsoft SQL Server. Able to effectively self-manage during independent
                     projects, as well as collaborate in a team setting.
                 </p>
+                
+                <!-- Skills Grid -->
+                <div class="skills-grid fade-in-up">
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fa fa-code"></i>
+                        </div>
+                        <h4>Frontend Development</h4>
+                        <div class="skill-progress">
+                            <div class="skill-progress-bar" data-percentage="90"></div>
+                        </div>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fa fa-server"></i>
+                        </div>
+                        <h4>Backend Development</h4>
+                        <div class="skill-progress">
+                            <div class="skill-progress-bar" data-percentage="85"></div>
+                        </div>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fa fa-database"></i>
+                        </div>
+                        <h4>Database Design</h4>
+                        <div class="skill-progress">
+                            <div class="skill-progress-bar" data-percentage="80"></div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -577,123 +617,165 @@
         </section>
 
         <!-- Portfolio/Works section -->
-        <section class="site-section section-works" id="works">
+        <section class="site-section section-works fade-in-up" id="works">
             <div class="container">
-                <h2>RECENT WORKS</h2>
-                <p class="section-subtitle"><span>READ WHAT I HAVE BEEN WORKING ON</span></p>
+                <h2 class="fade-in-up">RECENT WORKS</h2>
+                <p class="section-subtitle fade-in-up"><span>READ WHAT I HAVE BEEN WORKING ON</span></p>
 
-                <div class="portfolio">
-                    <ul class="portfolio-sorting list-inline">
-                        <li><a href="#" class=" active" data-group="all">all</a></li>
-                        <li><a href="#" class="" data-group="webdesign">Web Development</a></li>
-                        <li><a href="#" class="" data-group="webdev">Web Api</a></li>
-                        <li><a href="#" class="" data-group="mobileapps">Mobile apps</a></li>
+                <div class="portfolio fade-in-up">
+                    <ul class="portfolio-sorting list-inline text-center">
+                        <li><a href="#" class="portfolio-filter active btn btn-outline" data-filter="all">All</a></li>
+                        <li><a href="#" class="portfolio-filter btn btn-outline" data-filter="webdesign">Web Development</a></li>
+                        <li><a href="#" class="portfolio-filter btn btn-outline" data-filter="webdev">Web API</a></li>
+                        <li><a href="#" class="portfolio-filter btn btn-outline" data-filter="mobileapps">Mobile Apps</a></li>
                     </ul>
-                    <div id="grid">
+                    
+                    <div class="portfolio-grid" id="grid">
                         <!-- Portfolio item -->
-                        <div class="col-md-3 col-sm-4 col-xs-6" data-groups='["webdesign"]'>
-                            <div class="portfolio-item">
+                        <div class="portfolio-item" data-categories="webdesign">
                                 <div class="portfolio-item-thumb">
                                     <img src="~/img/OIP (1).jpeg" alt="" class="img-res">
-                                    <a href="#" class="rectangle" data-toggle="modal" data-target="#portfolioItem1">
-                                        <i class="fa fa-plus"></i>
-                                    </a>
+                                    <div class="portfolio-overlay">
+                                        <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#portfolioItem1">
+                                            <i class="fa fa-eye"></i> View Project
+                                        </a>
+                                    </div>
                                 </div>
                                 <div class="portfolio-info">
                                     <h3>MVC</h3>
                                     <p>Web Development</p>
+                                    <div class="tech-stack">
+                                        <span class="tech-pill">ASP.NET MVC</span>
+                                        <span class="tech-pill">C#</span>
+                                        <span class="tech-pill">SQL Server</span>
+                                    </div>
                                 </div>
-                            </div>
                         </div>
+                        
                         <!-- Portfolio item -->
-                        <div class="col-md-3 col-sm-4 col-xs-6" data-groups='["webdev"]'>
-                            <div class="portfolio-item">
+                        <div class="portfolio-item" data-categories="webdev">
                                 <div class="portfolio-item-thumb">
                                     <img src="~/img/R (1).png" alt="" class="img-res">
-                                    <a href="#" class="rectangle" data-toggle="modal" data-target="#portfolioItem2">
-                                        <i class="fa fa-plus"></i>
-                                    </a>
+                                    <div class="portfolio-overlay">
+                                        <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#portfolioItem2">
+                                            <i class="fa fa-eye"></i> View Project
+                                        </a>
+                                    </div>
                                 </div>
                                 <div class="portfolio-info">
                                     <h3>Map</h3>
                                     <p>Web Api</p>
+                                    <div class="tech-stack">
+                                        <span class="tech-pill">REST API</span>
+                                        <span class="tech-pill">Node.js</span>
+                                        <span class="tech-pill">MongoDB</span>
+                                    </div>
                                 </div>
-                            </div>
                         </div>
+                        
                         <!-- Portfolio item -->
-                        <div class="col-md-3 col-sm-4 col-xs-6" data-groups='["mobileapps"]'>
-                            <div class="portfolio-item">
+                        <div class="portfolio-item" data-categories="mobileapps">
                                 <div class="portfolio-item-thumb">
                                     <img src="~/img/portfolio-4.jpg" alt="" class="img-res">
-                                    <a href="https://selfservice.iua.co.za/login" class="rectangle" data-toggle="modal" data-target="#portfolioItem3">
-                                        <i class="fa fa-plus"></i>
-                                    </a>
+                                    <div class="portfolio-overlay">
+                                        <a href="https://selfservice.iua.co.za/login" class="btn btn-primary" target="_blank">
+                                            <i class="fa fa-external-link"></i> View Live
+                                        </a>
+                                    </div>
                                 </div>
                                 <div class="portfolio-info">
                                     <h3>IOS App</h3>
                                     <p>Mobile App</p>
+                                    <div class="tech-stack">
+                                        <span class="tech-pill">React Native</span>
+                                        <span class="tech-pill">iOS</span>
+                                        <span class="tech-pill">Firebase</span>
+                                    </div>
                                 </div>
-                            </div>
                         </div>
+                        
                         <!-- Portfolio item -->
-                        <div class="col-md-3 col-sm-4 col-xs-6" data-groups='["webdesign"]'>
-                            <div class="portfolio-item">
+                        <div class="portfolio-item" data-categories="webdesign">
                                 <div class="portfolio-item-thumb">
                                     <img src="~/img/OIP.jpeg" alt="" class="img-res">
-                                    <a href="#" class="rectangle" data-toggle="modal" data-target="#portfolioItem4">
-                                        <i class="fa fa-plus"></i>
-                                    </a>
+                                    <div class="portfolio-overlay">
+                                        <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#portfolioItem4">
+                                            <i class="fa fa-eye"></i> View Project
+                                        </a>
+                                    </div>
                                 </div>
                                 <div class="portfolio-info">
                                     <h3>Angular</h3>
                                     <p>Web Design</p>
+                                    <div class="tech-stack">
+                                        <span class="tech-pill">Angular</span>
+                                        <span class="tech-pill">TypeScript</span>
+                                        <span class="tech-pill">RxJS</span>
+                                    </div>
                                 </div>
-                            </div>
                         </div>
+                        
                         <!-- Portfolio item -->
-                        <div class="col-md-3 col-sm-4 col-xs-6" data-groups='["webdev"]'>
-                            <div class="portfolio-item">
+                        <div class="portfolio-item" data-categories="webdev">
                                 <div class="portfolio-item-thumb">
                                     <img src="~/img/portfolio-5.jpg" alt="" class="img-res">
-                                    <a href="#" class="rectangle" data-toggle="modal" data-target="#portfolioItem5">
-                                        <i class="fa fa-plus"></i>
-                                    </a>
+                                    <div class="portfolio-overlay">
+                                        <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#portfolioItem5">
+                                            <i class="fa fa-eye"></i> View Project
+                                        </a>
+                                    </div>
                                 </div>
                                 <div class="portfolio-info">
                                     <h3>ShoppingCart</h3>
                                     <p>Web Api</p>
+                                    <div class="tech-stack">
+                                        <span class="tech-pill">ASP.NET Core</span>
+                                        <span class="tech-pill">Entity Framework</span>
+                                        <span class="tech-pill">JWT</span>
+                                    </div>
                                 </div>
-                            </div>
                         </div>
+                        
                         <!-- Portfolio item -->
-                        <div class="col-md-3 col-sm-4 col-xs-6" data-groups='["mobileapps"]'>
-                            <div class="portfolio-item">
+                        <div class="portfolio-item" data-categories="mobileapps">
                                 <div class="portfolio-item-thumb">
                                     <img src="~/img/portfolio-6.jpg" alt="" class="img-res">
-                                    <a href="https://test-sales.iua.co.za/" class="rectangle" data-toggle="modal" data-target="#portfolioItem6">
-                                        <i class="fa fa-plus"></i>
-                                    </a>
+                                    <div class="portfolio-overlay">
+                                        <a href="https://test-sales.iua.co.za/" class="btn btn-primary" target="_blank">
+                                            <i class="fa fa-external-link"></i> View Live
+                                        </a>
+                                    </div>
                                 </div>
                                 <div class="portfolio-info">
                                     <h3>Android App</h3>
                                     <p>Mobile App</p>
+                                    <div class="tech-stack">
+                                        <span class="tech-pill">React Native</span>
+                                        <span class="tech-pill">Android</span>
+                                        <span class="tech-pill">Redux</span>
+                                    </div>
                                 </div>
-                            </div>
                         </div>
+                        
                         <!-- Portfolio item -->
-                        <div class="col-md-3 col-sm-4 col-xs-6" data-groups='["webdesign"]'>
-                            <div class="portfolio-item">
+                        <div class="portfolio-item" data-categories="webdesign">
                                 <div class="portfolio-item-thumb">
                                     <img src="~/img/R.png" alt="" class="img-res">
-                                    <a href="#" class="rectangle" data-toggle="modal" data-target="#portfolioItem8">
-                                        <i class="fa fa-plus"></i>
-                                    </a>
+                                    <div class="portfolio-overlay">
+                                        <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#portfolioItem8">
+                                            <i class="fa fa-eye"></i> View Project
+                                        </a>
+                                    </div>
                                 </div>
                                 <div class="portfolio-info">
                                     <h3>React</h3>
                                     <p>Web Design</p>
+                                    <div class="tech-stack">
+                                        <span class="tech-pill">React</span>
+                                        <span class="tech-pill">Redux</span>
+                                        <span class="tech-pill">Styled Components</span>
+                                    </div>
                                 </div>
-                            </div>
                         </div>
 
                     </div>
@@ -702,11 +784,11 @@
         </section>
 
         <!-- Me section -->
-        <section class="section-background section-me background-overlay text-center">
+        <section class="section-background section-me background-overlay text-center fade-in-up">
             <div class="container page-scroll">
-                <h2>Are You Impressed By My Work?</h2>
-                <p>Download My Curriculum Vitae</p>
-                <a href="#contact" class="btn">Download</a>
+                <h2 class="fade-in-up">Are You Impressed By My Work?</h2>
+                <p class="fade-in-up">Download My Curriculum Vitae</p>
+                <a href="#contact" class="btn btn-primary fade-in-up">Download CV</a>
             </div>
         </section>
 
@@ -714,7 +796,7 @@
         <section class="section-clients">
             <div class="container">
                 <div class="text-center section-diff-title">
-                    <h2>Clients I’ve Worked So Far</h2>
+                    <h2>Clients I've Worked So Far</h2>
                     <p></p>
                 </div>
 
@@ -737,18 +819,18 @@
         </section>
         <!-- End Clients section -->
         <!-- Social Networks section -->
-        <section class="section-networks blue-bg">
+        <section class="section-networks blue-bg fade-in-up">
             <div class="container">
-                <a href="#" class="rectangle">
+                <a href="#" class="rectangle social-link">
                     <i class="fa fa-instagram"></i>
                 </a>
-                <a href="#" class="rectangle">
+                <a href="#" class="rectangle social-link">
                     <i class="fa fa-youtube-play"></i>
                 </a>
-                <a href="#" class="rectangle">
+                <a href="#" class="rectangle social-link">
                     <i class="fa fa-envelope"></i>
                 </a>
-                <a href="https://www.linkedin.com/in/simphiwe-dlamuka-01022120b/" class="rectangle">
+                <a href="https://www.linkedin.com/in/simphiwe-dlamuka-01022120b/" class="rectangle social-link">
                     <i class="fa fa-linkedin"></i>
                 </a>
             </div>
@@ -932,6 +1014,12 @@
             </div>
         </div>
     </div><!-- /.modal -->
+    
+    <!-- Floating Action Button -->
+    <a href="#top" class="fab">
+        <i class="fa fa-arrow-up"></i>
+    </a>
+    
     <!-- Bootstrap core JavaScript================================================== -->
     <!-- jQuery core js -->
     <script src="~/js/jquery.min.js"></script>
@@ -962,6 +1050,9 @@
     </script>
     <!-- Custom JS -->
     <script src="~/js/script.js"></script>
+    
+    <!-- Modern Portfolio JS -->
+    <script src="~/js/modern-portfolio.js"></script>
 
     @RenderBody()
 

@@ -1,0 +1,22 @@
+<div class="app-container">
+  <app-header *ngIf="!isLoginPage"></app-header>
+  
+  <main class="main-content" [class.full-height]="isLoginPage">
+    <router-outlet></router-outlet>
+  </main>
+  
+  <app-footer *ngIf="!isLoginPage"></app-footer>
+</div>
+
+<!-- Loading overlay -->
+<div class="loading-overlay" *ngIf="isLoading">
+  <div class="loading-spinner">
+    <div class="spinner"></div>
+    <p>Loading...</p>
+  </div>
+</div>
+
+<!-- Toast notifications -->
+<div class="toast-container">
+  <!-- Toastr will inject notifications here -->
+</div>

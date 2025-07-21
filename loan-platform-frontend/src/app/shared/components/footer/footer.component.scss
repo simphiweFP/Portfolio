@@ -1,0 +1,154 @@
+.app-footer {
+  background: #1e293b;
+  color: white;
+  margin-top: auto;
+  
+  .footer-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 48px 32px 24px;
+  }
+  
+  .footer-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 48px;
+    margin-bottom: 32px;
+    
+    .footer-section {
+      .brand-section {
+        .logo {
+          width: 48px;
+          height: 48px;
+          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+          border-radius: 12px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-bottom: 16px;
+          
+          mat-icon {
+            font-size: 24px;
+            width: 24px;
+            height: 24px;
+            color: white;
+          }
+        }
+        
+        h3 {
+          font-size: 24px;
+          font-weight: 700;
+          margin: 0 0 16px 0;
+          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+        }
+        
+        p {
+          color: #94a3b8;
+          line-height: 1.6;
+          margin: 0;
+        }
+      }
+      
+      h4 {
+        font-size: 18px;
+        font-weight: 600;
+        margin: 0 0 20px 0;
+        color: white;
+      }
+      
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        
+        li {
+          margin-bottom: 12px;
+          
+          a {
+            color: #94a3b8;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            
+            &:hover {
+              color: #667eea;
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 24px;
+    border-top: 1px solid #334155;
+    
+    p {
+      color: #94a3b8;
+      margin: 0;
+      font-size: 14px;
+    }
+    
+    .social-links {
+      display: flex;
+      gap: 16px;
+      
+      a {
+        width: 40px;
+        height: 40px;
+        background: rgba(102, 126, 234, 0.1);
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #667eea;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        
+        &:hover {
+          background: rgba(102, 126, 234, 0.2);
+          transform: translateY(-2px);
+        }
+        
+        mat-icon {
+          font-size: 20px;
+          width: 20px;
+          height: 20px;
+        }
+      }
+    }
+  }
+}
+
+// Responsive design
+@media (max-width: 1024px) {
+  .app-footer .footer-content {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .app-footer {
+    .footer-container {
+      padding: 32px 16px 16px;
+    }
+    
+    .footer-content {
+      grid-template-columns: 1fr;
+      gap: 24px;
+      text-align: center;
+    }
+    
+    .footer-bottom {
+      flex-direction: column;
+      gap: 16px;
+      text-align: center;
+    }
+  }
+}

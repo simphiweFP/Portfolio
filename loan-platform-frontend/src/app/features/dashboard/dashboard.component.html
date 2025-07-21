@@ -1,0 +1,181 @@
+<div class="dashboard-container">
+  <!-- Welcome Section -->
+  <div class="welcome-section">
+    <div class="welcome-content">
+      <h1>Welcome back, {{ userName }}!</h1>
+      <p>Here's what's happening with your loan applications today.</p>
+    </div>
+    <div class="quick-actions">
+      <button mat-raised-button 
+              color="primary" 
+              class="action-btn"
+              routerLink="/applications/new">
+        <mat-icon>add</mat-icon>
+        New Application
+      </button>
+    </div>
+  </div>
+
+  <!-- Stats Cards -->
+  <div class="stats-grid">
+    <div class="stat-card" 
+         *ngFor="let stat of stats; trackBy: trackByStatId"
+         [class]="'stat-' + stat.type">
+      <div class="stat-icon">
+        <mat-icon>{{ stat.icon }}</mat-icon>
+      </div>
+      <div class="stat-content">
+        <h3>{{ stat.value | number }}</h3>
+        <p>{{ stat.label }}</p>
+        <div class="stat-change" [class.positive]="stat.change > 0" [class.negative]="stat.change < 0">
+          <mat-icon>{{ stat.change > 0 ? 'trending_up' : 'trending_down' }}</mat-icon>
+          <span>{{ stat.change > 0 ? '+' : '' }}{{ stat.change }}%</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content Grid -->
+  <div class="content-grid">
+    <!-- Recent Applications -->
+    <div class="content-card applications-card">
+      <div class="card-header">
+        <h2>Recent Applications</h2>
+        <button mat-button routerLink="/applications" class="view-all-btn">
+          View All
+          <mat-icon>arrow_forward</mat-icon>
+        </button>
+      </div>
+      
+      <div class="applications-list">
+        <div class="application-item" 
+             *ngFor="let app of recentApplications; trackBy: trackByAppId"
+             (click)="viewApplication(app.id)">
+          <div class="app-info">
+            <div class="app-header">
+              <span class="app-number">{{ app.applicationNumber }}</span>
+              <span class="app-status" [class]="'status-' + app.status.toLowerCase()">
+                {{ app.status }}
+              </span>
+            </div>
+            <div class="app-details">
+              <p class="loan-type">{{ app.loanType }}</p>
+              <p class="amount">${{ app.requestedAmount | number:'1.0-0' }}</p>
+            </div>
+          </div>
+          <div class="app-date">
+            <span>{{ app.createdAt | date:'MMM dd' }}</span>
+            <mat-icon>chevron_right</mat-icon>
+          </div>
+        </div>
+        
+        <div class="no-applications" *ngIf="recentApplications.length === 0">
+          <mat-icon>description</mat-icon>
+          <p>No applications yet</p>
+          <button mat-button color="primary" routerLink="/applications/new">
+            Create your first application
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Application Status Chart -->
+    <div class="content-card chart-card">
+      <div class="card-header">
+        <h2>Application Status Overview</h2>
+      </div>
+      
+      <div class="chart-container">
+        <canvas #statusChart></canvas>
+      </div>
+      
+      <div class="chart-legend">
+        <div class="legend-item" *ngFor="let item of chartLegend">
+          <div class="legend-color" [style.background-color]="item.color"></div>
+          <span>{{ item.label }} ({{ item.count }})</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quick Stats -->
+    <div class="content-card quick-stats-card">
+      <div class="card-header">
+        <h2>Quick Stats</h2>
+      </div>
+      
+      <div class="quick-stats">
+        <div class="quick-stat">
+          <div class="stat-value">${{ totalLoanAmount | number:'1.0-0' }}</div>
+          <div class="stat-label">Total Loan Amount</div>
+        </div>
+        
+        <div class="quick-stat">
+          <div class="stat-value">{{ averageProcessingTime }}d</div>
+          <div class="stat-label">Avg. Processing Time</div>
+        </div>
+        
+        <div class="quick-stat">
+          <div class="stat-value">{{ approvalRate }}%</div>
+          <div class="stat-label">Approval Rate</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Recent Activity -->
+    <div class="content-card activity-card">
+      <div class="card-header">
+        <h2>Recent Activity</h2>
+      </div>
+      
+      <div class="activity-list">
+        <div class="activity-item" 
+             *ngFor="let activity of recentActivity; trackBy: trackByActivityId">
+          <div class="activity-icon" [class]="'activity-' + activity.type">
+            <mat-icon>{{ activity.icon }}</mat-icon>
+          </div>
+          <div class="activity-content">
+            <p class="activity-title">{{ activity.title }}</p>
+            <p class="activity-description">{{ activity.description }}</p>
+            <span class="activity-time">{{ activity.timestamp | date:'short' }}</span>
+          </div>
+        </div>
+        
+        <div class="no-activity" *ngIf="recentActivity.length === 0">
+          <mat-icon>history</mat-icon>
+          <p>No recent activity</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Notifications -->
+    <div class="content-card notifications-card">
+      <div class="card-header">
+        <h2>Important Notifications</h2>
+        <button mat-icon-button (click)="markAllAsRead()">
+          <mat-icon>done_all</mat-icon>
+        </button>
+      </div>
+      
+      <div class="notifications-list">
+        <div class="notification-item" 
+             *ngFor="let notification of importantNotifications; trackBy: trackByNotificationId"
+             [class.unread]="!notification.isRead"
+             (click)="markAsRead(notification)">
+          <div class="notification-icon" [class]="'notification-' + notification.type.toLowerCase()">
+            <mat-icon>{{ getNotificationIcon(notification.type) }}</mat-icon>
+          </div>
+          <div class="notification-content">
+            <p class="notification-title">{{ notification.title }}</p>
+            <p class="notification-message">{{ notification.message }}</p>
+            <span class="notification-time">{{ notification.createdAt | date:'short' }}</span>
+          </div>
+        </div>
+        
+        <div class="no-notifications" *ngIf="importantNotifications.length === 0">
+          <mat-icon>notifications_none</mat-icon>
+          <p>No new notifications</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

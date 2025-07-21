@@ -1,0 +1,171 @@
+<header class="app-header">
+  <div class="header-container">
+    <!-- Logo and Brand -->
+    <div class="brand-section">
+      <div class="logo">
+        <mat-icon>account_balance</mat-icon>
+      </div>
+      <h1 class="brand-name">LoanPlatform</h1>
+    </div>
+
+    <!-- Navigation Menu -->
+    <nav class="nav-menu" *ngIf="!isMobile">
+      <a routerLink="/dashboard" 
+         routerLinkActive="active" 
+         class="nav-link">
+        <mat-icon>dashboard</mat-icon>
+        <span>Dashboard</span>
+      </a>
+      
+      <a routerLink="/applications" 
+         routerLinkActive="active" 
+         class="nav-link">
+        <mat-icon>description</mat-icon>
+        <span>Applications</span>
+      </a>
+      
+      <a routerLink="/loan-types" 
+         routerLinkActive="active" 
+         class="nav-link"
+         *ngIf="hasRole('Admin')">
+        <mat-icon>category</mat-icon>
+        <span>Loan Types</span>
+      </a>
+      
+      <a routerLink="/reports" 
+         routerLinkActive="active" 
+         class="nav-link"
+         *ngIf="hasRole('Admin') || hasRole('LoanOfficer')">
+        <mat-icon>analytics</mat-icon>
+        <span>Reports</span>
+      </a>
+    </nav>
+
+    <!-- User Actions -->
+    <div class="user-actions">
+      <!-- Notifications -->
+      <button mat-icon-button 
+              class="notification-btn"
+              [matBadge]="unreadNotifications"
+              [matBadgeHidden]="unreadNotifications === 0"
+              matBadgeColor="warn"
+              (click)="toggleNotifications()">
+        <mat-icon>notifications</mat-icon>
+      </button>
+
+      <!-- User Menu -->
+      <div class="user-menu">
+        <button mat-button 
+                class="user-btn"
+                [matMenuTriggerFor]="userMenu">
+          <div class="user-avatar">
+            <img [src]="userAvatar" [alt]="userName" *ngIf="userAvatar; else defaultAvatar">
+            <ng-template #defaultAvatar>
+              <mat-icon>person</mat-icon>
+            </ng-template>
+          </div>
+          <span class="user-name">{{ userName }}</span>
+          <mat-icon>keyboard_arrow_down</mat-icon>
+        </button>
+
+        <mat-menu #userMenu="matMenu" class="user-dropdown">
+          <button mat-menu-item routerLink="/profile">
+            <mat-icon>person</mat-icon>
+            <span>Profile</span>
+          </button>
+          <button mat-menu-item routerLink="/settings">
+            <mat-icon>settings</mat-icon>
+            <span>Settings</span>
+          </button>
+          <mat-divider></mat-divider>
+          <button mat-menu-item (click)="logout()">
+            <mat-icon>logout</mat-icon>
+            <span>Logout</span>
+          </button>
+        </mat-menu>
+      </div>
+
+      <!-- Mobile Menu Toggle -->
+      <button mat-icon-button 
+              class="mobile-menu-btn"
+              *ngIf="isMobile"
+              (click)="toggleMobileMenu()">
+        <mat-icon>{{ mobileMenuOpen ? 'close' : 'menu' }}</mat-icon>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Navigation -->
+  <nav class="mobile-nav" 
+       *ngIf="isMobile && mobileMenuOpen"
+       [@slideDown]>
+    <a routerLink="/dashboard" 
+       routerLinkActive="active" 
+       class="mobile-nav-link"
+       (click)="closeMobileMenu()">
+      <mat-icon>dashboard</mat-icon>
+      <span>Dashboard</span>
+    </a>
+    
+    <a routerLink="/applications" 
+       routerLinkActive="active" 
+       class="mobile-nav-link"
+       (click)="closeMobileMenu()">
+      <mat-icon>description</mat-icon>
+      <span>Applications</span>
+    </a>
+    
+    <a routerLink="/loan-types" 
+       routerLinkActive="active" 
+       class="mobile-nav-link"
+       *ngIf="hasRole('Admin')"
+       (click)="closeMobileMenu()">
+      <mat-icon>category</mat-icon>
+      <span>Loan Types</span>
+    </a>
+    
+    <a routerLink="/reports" 
+       routerLinkActive="active" 
+       class="mobile-nav-link"
+       *ngIf="hasRole('Admin') || hasRole('LoanOfficer')"
+       (click)="closeMobileMenu()">
+      <mat-icon>analytics</mat-icon>
+      <span>Reports</span>
+    </a>
+  </nav>
+</header>
+
+<!-- Notifications Panel -->
+<div class="notifications-panel" 
+     *ngIf="notificationsOpen"
+     [@slideInOut]>
+  <div class="notifications-header">
+    <h3>Notifications</h3>
+    <button mat-icon-button (click)="toggleNotifications()">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+  
+  <div class="notifications-content">
+    <div class="notification-item" 
+         *ngFor="let notification of notifications"
+         [class.unread]="!notification.isRead"
+         (click)="markAsRead(notification)">
+      <div class="notification-icon">
+        <mat-icon [class]="getNotificationIconClass(notification.type)">
+          {{ getNotificationIcon(notification.type) }}
+        </mat-icon>
+      </div>
+      <div class="notification-content">
+        <h4>{{ notification.title }}</h4>
+        <p>{{ notification.message }}</p>
+        <span class="notification-time">{{ notification.createdAt | date:'short' }}</span>
+      </div>
+    </div>
+    
+    <div class="no-notifications" *ngIf="notifications.length === 0">
+      <mat-icon>notifications_none</mat-icon>
+      <p>No notifications</p>
+    </div>
+  </div>
+</div>
